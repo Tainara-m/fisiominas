@@ -57,5 +57,3 @@ Responsivo (funciona bem no celular, tablet e computador).
 Intuitivo, com menu fixo no topo.
 
 Clareza na navegação, permitindo que o visitante encontre informações rápidas.
-
-Chamadas para ação em destaque: “Agende sua consulta” e “Saiba mais”.
