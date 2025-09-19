@@ -1,3 +1,74 @@
+/* Responsividade */
+@media (max-width: 900px) {
+    #home, #history, #pro, #service, #details {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .card {
+        width: 90%;
+        min-width: 220px;
+        max-width: 350px;
+        margin: 10px auto;
+    }
+    #service {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    #details .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .card1 {
+        width: 90%;
+        min-width: 180px;
+        max-width: 350px;
+    }
+    .card1 img {
+        width: 100%;
+        max-width: 350px;
+    }
+    #pro img {
+        width: 120px;
+    }
+    #welcome img {
+        width: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+    #pro h2, #pro h3 {
+        font-size: 22px;
+    }
+    .text-title {
+        font-size: 1.1em;
+    }
+    .card-details img {
+        width: 90px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding-top: 0;
+    }
+    nav i {
+        font-size: 22px;
+        padding: 10px;
+    }
+    a {
+        padding: 10px;
+        font-size: 14px;
+    }
+    #details {
+        height: auto;
+        padding-bottom: 20px;
+    }
+}
 :root{
     --green-dark:#1B5E20;
     --green-mediun:#388E3C;
@@ -103,7 +174,9 @@ a{
     margin: auto;
     max-width: 1200px; /* controla largura máxima para não ficar esticado em telas grandes */
     height: 600px;
-    background-color: var(--green-light);
+    background-image: url('https://images.unsplash.com/photo-1649591833478-15cd1060e137?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -115,7 +188,7 @@ a{
 #history h2{
     font-family: 'Vonique', cursive;
     font-size: 30px;
-    color: var(--green-dark);
+    color: var(--white);
     padding-top: 20px;
     -webkit-text-stroke: #616161;
     text-shadow: 2px 2px 2px #000000;
@@ -126,7 +199,7 @@ a{
     font-size: 14px;
     font-weight: lighter;
     text-align: center;
-    color: var(--grey);
+    color: var(--white);
     line-height: 1.2; /* Diminui o espaçamento entre as linhas */
     margin-left: 30px;
     margin-right: 30px;
@@ -136,7 +209,7 @@ a{
     margin: auto;
     max-width: 1200px; /* controla largura máxima para não ficar esticado em telas grandes */
     height: 550px;
-    background-color: #7aa17c;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     text-align: center;
