@@ -108,6 +108,7 @@
         max-height: unset !important;
         overflow: visible;
         flex-direction: column;
+        flex-wrap: nowrap;
     }
 
     #home {
@@ -552,4 +553,5 @@ footer {
         padding: 6px;
     }
 }
+
 
