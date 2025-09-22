@@ -4,6 +4,9 @@
         max-width: 100%;
         padding-left: 10px;
         padding-right: 10px;
+        height: auto !important;      /* Adicione esta linha */
+        min-height: unset !important; /* Adicione esta linha */
+        max-height: unset !important; /* Adicione esta linha */
     }
     .card {
         width: 90%;
@@ -13,7 +16,7 @@
     }
     #service {
         flex-direction: column;
-        height: auto;
+        height: auto !important;      /* Altere para auto */
         padding: 20px 0;
     }
     #details .container {
@@ -38,7 +41,18 @@
     }
 }
 
-@media (max-width: 600px) {
+/* Remova a altura fixa das seções principais para todas as telas */
+#history,
+#pro,
+#service,
+#contact {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    overflow: visible;
+}
+
+@media (max-width: 480px) {
     h1 {
         font-size: 28px;
     }
@@ -67,9 +81,6 @@
     nav ul.active {
         display: flex; /* Mostra o menu quando ativo */
     }
-    .menu-toggle {
-        display: block; /* Mostra o botão hamburguer */
-    }
     nav i {
         font-size: 22px;
         padding: 10px;
@@ -86,22 +97,31 @@
     }
     /* Ajustes extras para melhor responsividade */
     #home, #history, #pro, #service, #details, #contact {
-        padding-left: 5px;
-        padding-right: 5px;
+        background-image: none !important; /* Remove imagens de fundo */
+        background-color: #2cce8a !important;  /* Fundo branco para separar */
+        color: #000000 !important; /* Texto preto para melhor leitura */
+        box-shadow: 0 2px 8px #0001;
+        border-radius: 16px;
+        margin-bottom: 18px;
+        height: auto !important;           /* Altura automática */
+        min-height: unset !important;
+        max-height: unset !important;
+        overflow: visible;
     }
-    .profiles {
-        flex-direction: column;
-        gap: 20px;
+
+    #home {
+        background-color: #bef1de !important; /* Mantém um leve verde só no topo */
+        border-radius: 0 0 24px 24px;
     }
-    .profile {
-        width: 95vw;
-        min-width: 180px;
-        max-width: 350px;
-        margin: 10px auto;
-    }
-    .container {
-        flex-direction: column;
-        gap: 10px;
+
+    section {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        border-radius: 16px;
+        background: #ffffffcc;
+        box-shadow: 0 2px 8px #0001;
     }
 }
 :root{
@@ -207,8 +227,7 @@ a{
 
 #history{
     margin: auto;
-    max-width: 1200px; /* controla largura máxima para não ficar esticado em telas grandes */
-    height: 600px;
+    max-width: 1200px;
     background-image: url('https://images.unsplash.com/photo-1649591833478-15cd1060e137?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-repeat: no-repeat;
     background-size: cover;
@@ -242,8 +261,7 @@ a{
 
 #pro{
     margin: auto;
-    max-width: 1200px; /* controla largura máxima para não ficar esticado em telas grandes */
-    height: 550px;
+    max-width: 1200px;
     background-color: transparent;
     display: flex;
     flex-direction: column;
@@ -310,8 +328,7 @@ a{
 
 #service {
     margin: auto;
-    height: 550px;
-    max-width: 1200px; /* controla largura máxima para não ficar esticado em telas grandes */
+    max-width: 1200px;
     background-image: url('https://images.unsplash.com/photo-1579454566790-f9e5697ddf36?q=80&w=742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-repeat: no-repeat;
     background-size: cover;
@@ -464,15 +481,14 @@ a{
 
 #contact{
     margin: auto;
-    height: 400px;
-    max-width: 1200px; /* controla largura máxima para não ficar esticado em telas grandes */
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('https://plus.unsplash.com/premium_photo-1661879916150-f80f71c41df8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 20px;
 }
 
 #contato{
@@ -511,24 +527,27 @@ footer {
       display: flex;
     }
 
-/* Botão de menu hamburguer (oculto em telas grandes) */
-.menu-toggle {
-    display: none;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: var(--green-dark);
-    color: #fff;
-    border: none;
-    font-size: 32px;
-    border-radius: 8px;
-    z-index: 1001;
-    cursor: pointer;
-    padding: 8px 12px;
-}
-
 @media (max-width: 900px) {
     nav ul {
         max-width: 100vw;
+    }
+}
+
+@media (max-width: 600px) {
+    #icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    #contact i {
+        font-size: 32px;
+        width: 38px;
+        height: 38px;
+        padding: 6px;
     }
 }
